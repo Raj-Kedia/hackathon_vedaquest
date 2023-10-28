@@ -1,97 +1,57 @@
-<!doctype html>
+{%load static%}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <title>{% block title %} {% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'dashboard.css'%}">
+    <title>VEDAQUEST</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="{%static 'images/logo.jpg'%}">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Blogverse</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item {% block homeactive %}  {% endblock homeactive %}">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item {% block aboutactive %}  {% endblock aboutactive %}">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-                <li class="nav-item {% block contactactive %}  {% endblock contactactive %} ">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item {% block blogactive %}  {% endblock blogactive %} ">
-                    <a class="nav-link" href="/blog">Blog</a>
-                </li>
-                <li class="nav-item {% block createblogactive %}  {% endblock createblogactive %} ">
-                    <a class="nav-link" href="createblog">Create Blog</a>
-                </li>
-
-            </ul>
-            <div class="ml-auto form-inline ">
-                <form method="get" action="/search" class="my-2 my-lg-0 mx-3">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                        name="query" id="query">
-                    <button class="btn btn-primary my-2 my-sm-0 " type="submit">Search</button>
-                    {% if user.is_staff%}
-                    <a href="/admin" role="button" target="_blank" class="btn btn-outline-success m-2 my-sm-0"> Admin
-                        Panel </a>
-                    {%endif%}
-                </form>
-
-
-
-                {% if user.is_authenticated %}
-                <ul class="navbar-nav mr-2">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button"
-                            data-toggle="dropdown">
-                            Welcome {{request.user}}</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/logout">Logout</a>
-
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            {% else %}
-            <!-- Button to  trigger Login modal -->
+    <div class="dashboard-top d-flex justify-content-between">
+        <div class="dashboard-top-left">
+            <img class="logo" src="{% static 'images/temp_logo.png' %}">
+            <p class="name">vedaquest</p>
+        </div>
+        <div>
             <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#loginModal">
                 Login
             </button>
-
             <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#signupModal">
                 SignUp
             </button>
-            {% endif %}
-
-
         </div>
-    </nav>
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>Message : </strong> {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
     </div>
-    {% endfor %}
 
 
-
-
+    <div class="welcome">WELCOME TO VEDAQUEST<br><span class="lower-desc">The Personalised Learning Platform </span>
+    </div>
+    <div class="about-wrapper">
+        <p class="about">About</p>
+        <div class="about-wrapper">
+            <p class="description">
+                Welcome to Vedaquest, your personalized learning platform. We believe in making education accessible,
+                interactive, and effective.
+                Our mission is to empower learners of all levels with high-quality courses and resources. With a team of
+                dedicated experts,
+                we strive to provide you with the best learning experience possible.
+            </p>
+            <p class="description">
+                Our carefully curated courses cover a wide range of topics, from programming and web development to art
+                and literature.
+                Whether you're a beginner or an advanced learner, we have something for everyone. Join us on this
+                educational journey
+                and unlock your full potential!
+            </p>
+        </div>
+    </div>
+    <div class="courses">
+        <p class="course-heading"></p>
+    </div>
 
     <!-- SignUp Modal -->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
@@ -104,7 +64,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/signup" method='post'>
+                    <form action="home/signup" method='post'>
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
@@ -124,6 +84,17 @@
                             <label for="email">Email address</label>
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="name@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Adress</label>
+                            <input type="text" class="form-control" id="adress" name="adress"
+                                placeholder="city, state, country" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Phone numberr</label>
+                            <input type="number" class="form-control" id="phonenumber" name="phonenumber"
+                                placeholder="phone number" required>
                         </div>
                         <div class="form-group">
                             <label for="pass1">Choose a password</label>
@@ -147,11 +118,6 @@
         </div>
     </div>
 
-
-    {% block body %} {% endblock body %}
-    {% block js %}
-    {% endblock js %}
-
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
         <div class="modal-dialog">
@@ -163,7 +129,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/login" method="POST"> {% csrf_token %}
+                    <form action="home/login" method="POST"> {% csrf_token %}
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="loginusername" name="loginusername"
@@ -192,6 +158,7 @@
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
                     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
                     crossorigin="anonymous"></script>
+
 </body>
 
 </html>

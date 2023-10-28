@@ -1,0 +1,102 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="C:\Vedaquest\hackathon_vedaquest\images\temp_logo.png">
+    <title>VEDAQUEST | Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="{%static 'course.css'%}" />
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" class="logo">
+                        <img src="{%static 'images/logo.jpg'%}" alt="">
+                        <span class="nav-item">VEDAQUEST</span>
+                    </a></li>
+                <li><a href="/home" target="_self">
+                        <i class="fas fa-user"></i>
+                        <span class="nav-item">Profile</span>
+                    </a></li>
+                <li><a href="/course" target="_self">
+                        <i class="fas fa-wallet"></i>
+                        <span class="nav-item">Courses</span>
+                    </a></li>
+                <li><a href="/doubt">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-item">Doubt</span>
+                    </a></li>
+                <li><a href="">
+                        <i class="fas fa-tasks"></i>
+                        <span class="nav-item">Tasks</span>
+                    </a></li>
+                <li><a href="/" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item"> Log out</span>
+                    </a></li>
+            </ul>
+        </nav>
+
+        <section class="courses-list">
+            <div class="courses">
+                <div class="courses-top">
+                    <h1>Availabe Courses</h1>
+                </div>
+                <div class="box">
+                    <h3>HTML</h3>
+                    <h5>Description: </h5>
+                    <p>This course is a structured learning program designed to teach students the fundamentals of HTML
+                        (HyperText Markup Language), the cornerstone of web development. In this course, you will learn
+                        how to create and structure web content using HTML, covering topics such as HTML tags, elements,
+                        attributes, and document structure. You'll gain practical hands-on experience in building web
+                        pages, creating links, embedding multimedia, and designing forms. Additionally, you'll
+                        understand best practices for accessibility, semantics, and responsive web design.</p>
+                    <div class="more-info">
+                        <p><b>Instructor</b>: Raj Kedia</p>
+                        <p><b>Duration</b>: 8hrs</p>
+                    </div>
+                    <button>Enroll now</button>
+                </div>
+                <div class="box">
+                    <h3>CSS</h3>
+                    <h5>Description: </h5>
+                    <p>This CSS course is a structured educational program that focuses on teaching students the art and
+                        science of Cascading Style Sheets. In this course, you will learn how to style and design web
+                        content, enhancing the visual presentation of web pages. You'll delve into the world of CSS
+                        properties, selectors, layout techniques, and best practices for creating aesthetically
+                        pleasing, responsive, and user-friendly websites. By the end of the course, you'll be proficient
+                        in controlling the colors, fonts, spacing, and layout of web elements, enabling you to create
+                        visually engaging and professional web designs.</p>
+                    <div class="more-info">
+                        <p><b>Instructor</b>: Raj Kedia</p>
+                        <p><b>Duration</b>: 8hrs</p>
+                    </div>
+                    <button>Enroll now</button>
+                </div>
+                <div class="box">
+                    <h3>JavaScript</h3>
+                    <h5>Description: </h5>
+                    <p>This JavaScript course is a comprehensive educational program that introduces students to the
+                        world of JavaScript, a versatile and powerful programming language. In this course, you will
+                        learn how to use JavaScript to create interactive and dynamic web applications. You'll cover
+                        essential topics such as variables, data types, control structures, functions, and
+                        object-oriented programming. Through practical coding exercises and projects, you'll gain
+                        hands-on experience in building web functionalities, handling user interactions, and
+                        manipulating web page content.</p>
+                    <div class="more-info">
+                        <p><b>Instructor</b>: Raj Kedia</p>
+                        <p><b>Duration</b>: 8hrs</p>
+                    </div>
+                    <button>Enroll now</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
