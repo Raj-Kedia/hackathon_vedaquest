@@ -87,7 +87,7 @@ def handleSignUp(request):
         profile.save()
         messages.success(
             request, " Welcome to VedaQuest")
-        return redirect("home")
+        return redirect("main")
 
     else:
         return HttpResponse("404 - Not found")
