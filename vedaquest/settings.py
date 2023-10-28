@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "home.apps.HomeConfig",
     "course.apps.CourseConfig",
-    "doubt.apps.DoubtConfig"
 ]
 
 MIDDLEWARE = [
