@@ -1,6 +1,6 @@
 # Vedaquest Learning Platform
 
-![Vedaquest Logo](images/temp_logo.png)
+![Vedaquest Logo](images/logo.jpg)
 
 ## About
 
