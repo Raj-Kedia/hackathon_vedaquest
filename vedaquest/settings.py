@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)c#b9%38ffv7lh=o@o4^(q^ux+vz+igl+ii$yxto_2$)t(92vx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['http://hackwiz.pythonanywhere.com/']
+ALLOWED_HOSTS = ['https://dashing-capybara-5185e7.netlify.app/']
 
 
 # Application definition
@@ -120,7 +120,6 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATIC_ROOT = 'home/hackwiz/vedaquest.github.io/static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
